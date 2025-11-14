@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>//Task 1
+// Task 1.1
+//create an array called fruits with five items.
+const fruits = ["Apple","Banana","Mango","Orange","Grapes"];
+
+//print entire array to check it contents.
+console.log("All fruits:", fruits);
+
+//print the first item
+console.log("first fruit:", fruits[0]);
+
+//prints the last item 
+console.log("last fruit:",fruits[fruits.length-1]);
+
+//add a new fruit at the end
+fruits.push("papaya");
+console.log("After push:",fruits);
+
+//remove the second fruit
+fruits.splice(1,1);
+console.log("After removing second fruit:",fruits);
+
+//find the length of the array
+console.log("Number of fruits:",fruits.length);
+
+//Task 1.2
+//Use for loop to print each fruit on a new line
+for(let i=0; i<fruits.length; i++) {
+  console.log('for loop - fruit at index ${i}:',fruits[i]);
+}
+
+//use forEach to print each fruit
+fruits.forEach((fruit,index)=>{
+  console.log('forEach-fruit at index ${index}:', fruit);
+});
+
+//Task 2
+//Task 2.1
+//Transforming Arrays
+const numbers = [2, 5, 8, 10, 12];
+
+// create a new array that doubles each number
+const doubled = numbers.map(num => num * 2);
+console.log("Doubled:", doubled); 
+
+// keep only numbers greater than 6
+const greaterThanSix = numbers.filter(num => num > 6);
+console.log("Numbers > 6:", greaterThanSix);
+
+// find the sum of all numbers
+const sum = numbers.reduce((accumulator, current) => accumulator + current, 0);
+console.log("Sum of numbers:", sum);
+
+
+//Task 2.2
+//Searching and Sorting
+//Check if 8 is in the array 
+console.log("Includes 8?", numbers.includes(8));
+
+// Find the index of 10
+console.log("Index of 10:", numbers.indexOf(10));
+
+// Sort the array in ascending order
+const ascending = [...numbers].sort((a, b) => a - b);
+console.log("Sorted ascending:", ascending);
+
+//Task 3
+//Task 3.1
+//Creating and Accessing Objects
+//Create an object called student with properties: name, age, faculty, subjects
+const student = {
+  name: "Kavindu",
+  age: 21,
+  faculty: "Computing",
+  subjects: ["Web Development", "Database Systems", "Programming"]
+};
+
+// Print student's name and faculty
+console.log("Student name:", student.name);
+console.log("Faculty:", student.faculty);
+
+// Add a new property called year with value 2025
+student.year = 2025;
+console.log("Added year:", student.year);
+
+// Change the age to 22
+student.age = 22;
+console.log("Updated age:", student.age);
+
+// Print all subjects in a loop
+for (let i = 0; i < student.subjects.length; i++) {
+  console.log(`Subject ${i + 1}:`, student.subjects[i]);
+}
+
+//Task 4
+//Task 4.1
+//Array of Objects
+//Create an array of student objects (each object has name, age, faculty)
+const students = [
+  { name: "Kavindu", age: 21, faculty: "Computing" },
+  { name: "Nimesha", age: 22, faculty: "Engineering" },
+  { name: "Dinuka", age: 23, faculty: "Business" }
+];
+
+// Print all student names
+students.forEach(s => console.log("Student name:", s.name));
+
+//find students older than 21
+const olderThan21 = students.filter(s => s.age > 21);
+console.log("Students older than 21:", olderThan21);
+
+//create an array of all faculty names
+const faculties = students.map(s => s.faculty);
+console.log("Faculty names:", faculties);
+
+
+//Task 4.2
+//Object Containing an Array of Objects
+const classroom = {
+  className: "IT2025",
+  teacher: "Mr. Perera",
+  students: [
+    { name: "Kavindu", age: 21 },
+    { name: "Nimesha", age: 22 },
+    { name: "Dinuka", age: 23 }
+  ]
+};
+
+// Print the teacher's name
+console.log("Teacher:", classroom.teacher);
+
+// Add a new student to the array
+classroom.students.push({ name: "Muthu", age: 20 });
+console.log("After adding a student:", classroom.students);
+
+// Print all student names in the classroom
+classroom.students.forEach(s => console.log("Class student:", s.name));
+
+
+//Task 5
+//Store products and calculate total value (price * qty for each)
+const products = [
+  { name: "Keyboard", price: 2500, qty: 2 },
+  { name: "Mouse", price: 1500, qty: 3 },
+  { name: "Monitor", price: 22000, qty: 1 }
+];
+
+// Use .reduce() to calculate total inventory value
+const totalValue = products.reduce((total, product) => {
+  // for each product add price * qty to the total
+  return total + (product.price * product.qty);
+}, 0);
+
+console.log("Total value of all products:", totalValue);
+
+
+
+</script>
+</body>
+</html>
